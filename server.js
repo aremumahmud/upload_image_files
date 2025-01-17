@@ -28,7 +28,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", upload.single("picture"), async(req, res) => {
-    return res.json({ picture: req.file.path });
+    console.log(req.files)
+    console.log(req)
+    return res.json({ picture: req?.file?.path });
 });
 
 const start = (port) => {
